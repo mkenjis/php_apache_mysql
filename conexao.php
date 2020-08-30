@@ -1,5 +1,5 @@
 <?php
-  $server = "localhost";
+  $server = "db";
   $user   = "curso";
   $pwd    = "123456";
   $db     = "curso";

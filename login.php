@@ -46,7 +46,9 @@
       <td><input type="password" id="senha" name="senha"></td></tr>
       <tr><td><input type="submit" value="Login"></td></tr>
       </table>
-      <p>
+      <p></p>
+      <table style="border:0px solid gray;margin-left:auto;margin-right:auto;">
+      <tr><td style="background-color:#FF0000;">
       <?php
       if (isset($_POST["login"])) {
         if ($login) {
@@ -60,7 +62,8 @@
         }
       }
       ?>
-      </p>
+      </td></tr>
+      </table>
     </form> 
     </div>
     <div id="novousuario">
