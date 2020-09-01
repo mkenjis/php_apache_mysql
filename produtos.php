@@ -1,3 +1,5 @@
+<?php require_once("sessao.php"); ?>
+
 <?php require_once("conn/conexao.php"); ?>
 
 <html>
@@ -49,5 +51,8 @@
 <a href="inicial.php">Sair</a>
 </p>
 </main>
+  <div id="footer">
+    <h1>Copyright by Optima Consulting</h1>
+  </div>
 </body>
 </html>

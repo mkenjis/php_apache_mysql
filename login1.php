@@ -18,12 +18,18 @@
 
     # echo $query;
     $row = mysqli_fetch_assoc($res);
-    if ($row["login"] == $login) {
+    if (!empty($row)) {
+      # inicia sessao
+      session_start();
+      $_SESSION["sessao"] = $login;
+
       $login = "";
       $senha = "";
+
+      # redireciona para pagina principal
       header("location: inicial.php");
     }
-    print_r($row);
+    # print_r($row);
     
     $ja_existe = true;
 
@@ -44,8 +50,9 @@
     <div id="login">
     <form action="login1.php" method="post">
       <table style="border:1px solid gray;margin-left:auto;margin-right:auto;">
+      <tr><td colspan="2"><h1>Tela de Login</h1></td></tr>
       <tr><td><label>login  :</label></td>
-      <td><input type="text" id="login" name="login" placeholder="Login"></td></tr>
+      <td><input type="text" id="login" name="login" value="<?php echo $login ?>" placeholder="Login"></td></tr>
       <tr><td><label>senha  :</label></td>
       <td><input type="password" id="senha" name="senha"></td></tr>
       <tr><td><input type="submit" value="Login"></td></tr>

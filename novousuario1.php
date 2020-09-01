@@ -21,7 +21,7 @@ if (isset($_POST["login"])) {
     $row   = mysqli_fetch_assoc($res);
 #    print_r($row);
 
-    if (! $row) {
+    if (empty($row)) {
 
       $query = "insert into usuario(nome, email, login, senha, data_cadastro) ";
       $query .= "values ('{$nome}','{$email}','{$login}','{$senha}', now())";
@@ -54,6 +54,7 @@ if (isset($_POST["login"])) {
     <div id="login">
     <form action="novousuario1.php" method="post">
       <table style="border:1px solid gray;margin-left:auto;margin-right:auto;">
+      <tr><td colspan="2"><h1>Cadastro de Usuario</h1></td></tr>
       <tr><td><label>Nome: </label></td>
       <td><input type="text" id="nome" name="nome" placeholder="Nome"></td></tr>
       <tr><td><label>Email: </label></td>
