@@ -1,6 +1,9 @@
-<?php include_once("conexao.php") ?>
+<?php require_once("conn/conexao.php"); ?>
 
 <?php
+
+$ja_existe = false;
+
 if (isset($_POST["login"])) {
 
   $nome  = $_POST["nome"];
@@ -31,8 +34,11 @@ if (isset($_POST["login"])) {
 
       } else {
         echo "Insercao com sucesso";
-        header("location: login.php");
+        header("location: login1.php");
       }
+    }
+    else {
+      $ja_existe = true;
     }
   }
 }
@@ -60,14 +66,10 @@ if (isset($_POST["login"])) {
       </table>
       <p>
       <?php
-      if (isset($_POST["login"])) {
-        if ($login <> "") {
-          if ($res) {
-            echo "Login já existente";
-          } else {
-            echo "";
-          }
-        }
+      if ($ja_existe) {
+        echo "Login já existente";
+      } else {
+        echo "";
       }
       ?>
       </p>
@@ -79,3 +81,10 @@ if (isset($_POST["login"])) {
   </div>
 </body>
 </html>
+
+<?php
+  if (isset($_POST["login"])) {
+    mysqli_free_result($res);
+  }
+  mysqli_close($conexao);
+?>

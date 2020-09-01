@@ -1,13 +1,14 @@
-<?php include_once("conexao.php"); ?>
+<?php require_once("conn/conexao.php"); ?>
 
 <?php
-  $id = $_POST['id'];
+  $id = $_GET["id"];
 
   $query = "delete from produto where id = $id";
-  
+#  echo $query;
   $resultado = mysqli_query($conn, $query);
   
+  mysqli_free_result($resultado);
   mysqli_close($conn);
   
-  header('Location: produtos.php');
+  header("location: produtos.php");
 ?>

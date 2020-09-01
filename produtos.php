@@ -1,4 +1,4 @@
-<?php include_once("conexao.php"); ?>
+<?php require_once("conn/conexao.php"); ?>
 
 <html>
 <head>
@@ -39,7 +39,8 @@
 	</tr>
 <?php
 }
-mysqli_close($conn);
+  mysqli_free_result($resultado);
+  mysqli_close($conn);
 ?>
 </table>
 </div>

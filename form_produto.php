@@ -1,8 +1,8 @@
-<?php include_once("conexao.php"); ?>
+<?php require_once("conn/conexao.php"); ?>
 
 <?php
-  $id = $_GET['id'];
-#  $id = '1';
+  $id = $_GET["id"];
+#  $id = '10';
   
   $query = "select id,nome,descricao,preco_unitario,fabricante from produto where id = $id";
   $resultado = mysqli_query($conn, $query);
@@ -12,8 +12,7 @@
   $descricao = $linha['descricao'];
   $preco_unitario = $linha['preco_unitario'];
   $fabricante = $linha['fabricante'];
-  
-  mysqli_close($conexao);
+
 ?>
 <html>
   <head>
@@ -42,3 +41,7 @@
   </body>
 </html>
 
+<?php
+  mysqli_free_result($resultado);
+  mysqli_close($conn);
+?>

@@ -1,6 +1,8 @@
 <?php require_once("conn/conexao.php"); ?>
 
 <?php
+  $ja_existe = false;
+
   if (isset($_POST["login"])) {
 
     $login = $_POST["login"];
@@ -22,6 +24,8 @@
       header("location: inicial.php");
     }
     print_r($row);
+    
+    $ja_existe = true;
 
   } else {
     $login = "";
@@ -38,7 +42,7 @@
 <body>
   <main>
     <div id="login">
-    <form action="login.php" method="post">
+    <form action="login1.php" method="post">
       <table style="border:1px solid gray;margin-left:auto;margin-right:auto;">
       <tr><td><label>login  :</label></td>
       <td><input type="text" id="login" name="login" placeholder="Login"></td></tr>
@@ -50,17 +54,11 @@
       <table style="border:0px solid gray;margin-left:auto;margin-right:auto;">
       <tr><td style="background-color:#FF0000;">
       <?php
-      if (isset($_POST["login"])) {
-        if ($login) {
-          if (! $row) {
-            echo "Login/senha invalidos";
-          } else {
-            echo "";
-          }
+        if ($ja_existe) {
+          echo "Login/senha invalidos";
         } else {
           echo "";
         }
-      }
       ?>
       </td></tr>
       </table>
@@ -78,9 +76,9 @@
 </html>
 
 <?php
-    if (isset($_POST["login"])) {
-	  mysqli_free_result($res);
-	}
-    // Fechar conexao
-    mysqli_close($conn);
+  if (isset($_POST["login"])) {
+    mysqli_free_result($res);
+  }
+  // Fechar conexao
+  mysqli_close($conn);
 ?>
