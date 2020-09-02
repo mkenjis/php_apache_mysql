@@ -53,7 +53,7 @@ if (isset($_POST["login"])) {
   <main>
     <div id="login">
     <form action="novousuario1.php" method="post">
-      <table style="border:1px solid gray;margin-left:auto;margin-right:auto;">
+      <table style="border:1px solid gray;margin-left:auto;margin-right:auto; background-color: linen;">
       <tr><td colspan="2"><h1>Cadastro de Usuario</h1></td></tr>
       <tr><td><label>Nome: </label></td>
       <td><input type="text" id="nome" name="nome" placeholder="Nome"></td></tr>
@@ -63,7 +63,7 @@ if (isset($_POST["login"])) {
       <td><input type="text" id="login" name="login" placeholder="Login"></td></tr>
       <tr><td><label>Senha: </label></td>
       <td><input type="password" id="senha" name="senha"></td></tr>
-      <tr><td><input type="submit" value="Submit"></td></tr>
+      <tr><td><input type="submit" value="Submit"></td>
       </table>
       <p>
       <?php

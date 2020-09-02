@@ -29,7 +29,7 @@
   <div id="login">
   <form method="post" action="salvar_produto.php">
     <input type="hidden" id="id" name="id" value="<?php echo $id ?>" >
-    <table style="border:1px solid gray;margin-left:auto;margin-right:auto;">
+    <table style="border:1px solid gray;margin-left:auto;margin-right:auto; background-color: linen;">
     <tr><td colspan="2"><h1>Cadastro de Produtos</h1></td></tr>
     <tr><td><label>Nome:<label></td>
     <td><input type="text" id="nome" name="nome" value="<?php echo $nome ?>"></td></tr>

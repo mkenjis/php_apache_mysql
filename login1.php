@@ -49,7 +49,7 @@
   <main>
     <div id="login">
     <form action="login1.php" method="post">
-      <table style="border:1px solid gray;margin-left:auto;margin-right:auto;">
+      <table style="border:1px solid gray;margin-left:auto;margin-right:auto; background-color: linen;">
       <tr><td colspan="2"><h1>Tela de Login</h1></td></tr>
       <tr><td><label>login  :</label></td>
       <td><input type="text" id="login" name="login" value="<?php echo $login ?>" placeholder="Login"></td></tr>
