@@ -1,6 +1,7 @@
+<?php require_once("sessao.php"); ?>
+
 <?php require_once("conn/conexao.php"); ?>
 
-<?php require_once("sessao.php"); ?>
 <?php
   if (isset($_POST["id"])) {
 	 $id = $_POST["id"];
