@@ -31,9 +31,7 @@ if (isset($_POST["login"])) {
 
       if (! $res) {
         echo "Erro na insercao do usuario no banco";
-
       } else {
-        echo "Insercao com sucesso";
         header("location: login1.php");
       }
     }

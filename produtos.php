@@ -37,7 +37,7 @@
 		<td><?php echo $linha['preco_unitario']; ?></td>
                 <td><?php echo $linha['fabricante']; ?></td>
 		<td><a href="form_produto.php?id=<?php echo $linha['id']; ?>">Editar</a> | 
-		    <a href="deletar_produto.php?id=<?php echo $linha['id']; ?>">Deletar</a></td>
+		    <a href="deletar_produto1.php?id=<?php echo $linha['id']; ?>">Deletar</a></td>
 	</tr>
 <?php
 }

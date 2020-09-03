@@ -25,14 +25,12 @@
 
       $login = "";
       $senha = "";
+      #$ja_existe = true;
 
       # redireciona para pagina principal
       header("location: inicial.php");
     }
-    # print_r($row);
-    
     $ja_existe = true;
-
   } else {
     $login = "";
     $senha = "";
