@@ -28,6 +28,7 @@
 	   $descricao = $row["descricao"];
 	   $preco_unitario = $row["preco_unitario"];
 	   $fabricante = $row["fabricante"];
+           $imagem_arq = $row["imagem_arq"];
 	 }
   }
 ?>
@@ -51,8 +52,9 @@
     <td><input type="text" id="preco_unitario" name="preco_unitario" value="<?php echo $preco_unitario ?>"></td></tr>
     <tr><td><label>Fabricante:</label></td>
     <td><input type="text" id="fabricante" name="fabricante" value="<?php echo $fabricante ?>"></td></tr>
+    <tr><td><label>Imagem:</label></td>
+    <td><img src="<?php echo $imagem_arq ?>"></td></tr>
     <tr><td><input type="submit" value="Deletar" /></td>
-    <td><input type="submit" value="Cancelar" /></td></tr>
     </table>
   </form>
   </div>

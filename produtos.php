@@ -20,11 +20,12 @@
 	<td width="200px"><b>Descricao</b></td>
 	<td width="100px"><b>Preco Unit</b></td>
 	<td width="100px"><b>Fabricante</b></td>
+        <td width="100px"><b>Imagem</b></td>
 </tr>
 
 <?php
   
-  $query = "select id,nome,descricao,preco_unitario,fabricante from produto order by id";
+  $query = "select id,nome,descricao,preco_unitario,fabricante,imagem_arq from produto order by id";
   $resultado = mysqli_query($conn, $query);
   while ($linha = mysqli_fetch_array($resultado)) {
   
@@ -36,7 +37,8 @@
 		<td><?php echo $linha['descricao']; ?></td>
 		<td><?php echo $linha['preco_unitario']; ?></td>
                 <td><?php echo $linha['fabricante']; ?></td>
-		<td><a href="form_produto.php?id=<?php echo $linha['id']; ?>">Editar</a> | 
+                <td><img src="<?php echo $linha['imagem_arq'];?>" ></td>
+		<td><a href="form_produto1.php?id=<?php echo $linha['id']; ?>">Editar</a> | 
 		    <a href="deletar_produto1.php?id=<?php echo $linha['id']; ?>">Deletar</a></td>
 	</tr>
 <?php
@@ -47,7 +49,7 @@
 </table>
 </div>
 <p>
-<a href="form_produto.php">Novo</a>
+<a href="form_produto1.php">Novo</a>
 <a href="inicial.php">Sair</a>
 </p>
 </main>
