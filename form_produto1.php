@@ -48,9 +48,7 @@
   </form>
   </div>
   </main>
-  <div id="footer">
-    <h1>Copyright by Optima Consulting</h1>
-  </div>
+  <?php include_once("footer.html") ?>
   </body>
 </html>
 

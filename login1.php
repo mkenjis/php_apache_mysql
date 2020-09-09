@@ -74,9 +74,7 @@
     <a href=esqueceusenha.php>Esqueceu a Senha ?</a>
     </div>
   </main>
-  <div id="footer">
-    <h1>Copyright by Optima Consulting</h1>
-  </div>
+  <?php include_once("footer.html") ?>
 </body>
 </html>
 
