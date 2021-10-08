@@ -31,10 +31,19 @@
   else {
     $query = "insert into produto(nome,descricao,preco_unitario,fabricante,imagem_arq,data_cadastro) values ('{$nome}', '{$descricao}', {$preco_unitario}, '{$fabricante}', '{$tgt_dir}', now())";
   }
-  
-  $resultado = mysqli_query($conn, $query);
-  
-  mysqli_free_result($resultado);
+  echo $query;  
+  $res = mysqli_query($conn, $query);
+  echo $res;  
+
+  if (! $res) {
+        echo "Erro na insercao do produto no banco";
+        echo mysqli_error($conn);
+        die();
+#  } else {
+#        header("location: login1.php");
+  }
+
+  mysqli_free_result($res);
   
   mysqli_close($conn);
 

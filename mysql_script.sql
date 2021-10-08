@@ -20,4 +20,5 @@ create table produto (
    preco_unitario decimal(10,2),
    fabricante varchar(20),
    data_cadastro datetime,
+   imagem_arq varchar2(255),
    constraint keyprod primary key (id));
