@@ -1,6 +1,3 @@
-create database curso;
-
-use curso;
 
 create table usuario (
   id int(11) auto_increment,
@@ -11,8 +8,6 @@ create table usuario (
   senha varchar(20),
   constraint key1 primary key (id));
   
-GRANT ALL PRIVILEGES ON curso.* TO 'curso'@'%' IDENTIFIED BY '123456';  
-
 create table produto (
    id int(11) auto_increment,
    nome varchar(32),
